@@ -1,22 +1,33 @@
-import os
 import shutil
+from pathlib import Path
+def organize_folder(folder_path, dry_run=False):
+    folder = Path(folder_path)
 
-def organize_folder(path):
-    if not os.path.exists(path):
-        print("La ruta no existe")
-        return
+    if not folder.exists():
+        raise FileNotFoundError("La carpeta no existe.")
 
-    for file in os.listdir(path):
-        full_path = os.path.join(path, file)
+    if not folder.is_dir():
+        raise NotADirectoryError("La ruta no es una carpeta.")
 
-        if os.path.isfile(full_path):
-            ext = file.split('.')[-1]
+    actions = []
 
-            folder_name = os.path.join(path, ext)
+    for item in folder.iterdir():
+        if item.is_file():
+            extension = item.suffix.lower().replace(".", "")
 
-            if not os.path.exists(folder_name):
-                os.makedirs(folder_name)
+            if extension == "":
+                extension = "sin_extension"
 
-            shutil.move(full_path, os.path.join(folder_name, file))
+            destination = folder / extension
+            target = destination / item.name
 
-    print("Archivos organizados correctamente")
+            actions.append(f"{item.name} -> {extension}/{item.name}")
+
+            if not dry_run:
+                destination.mkdir(exist_ok=True)
+                shutil.move(str(item), str(target))
+
+    if dry_run:
+        return "\n".join(actions) if actions else "No hay archivos para organizar."
+
+    return "Carpeta organizada correctamente."
