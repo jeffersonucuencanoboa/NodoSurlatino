@@ -1,3 +1,7 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/status-active-success)
+
 # NodoSurlatino
 
 Herramienta CLI para optimizar flujos de trabajo y organización automatizada de archivos en entornos de producción tecnológica del Sur Global.
@@ -149,3 +153,11 @@ MIT License
 
 Desarrollado por Noboa.
 ``
+---
+
+# Instalación Paso a Paso
+
+## 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/jeffersonucuencanoboa/NodoSurlatino.git
