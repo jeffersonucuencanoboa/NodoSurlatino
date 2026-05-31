@@ -1,3 +1,5 @@
+import logging
+logging.basicConfig(level=logging.INFO)
 from task_automator.core import organize_folder
 
 if __name__ == "__main__":
