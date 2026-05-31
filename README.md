@@ -1,68 +1,151 @@
-Task Automator Py
-Herramienta para optimizar flujos de organización de archivos en entornos de producción tecnológica del Sur Global.
-Task Automator Py permite estructurar carpetas automáticamente según extensiones, reduciendo fricción operativa y mejorando la higiene digital en workflows reales.
+# NodoSurlatino
 
-✨ Features
+Herramienta CLI para optimizar flujos de trabajo y organización automatizada de archivos en entornos de producción tecnológica del Sur Global.
 
-Organización automática por extensión
-Soporte para múltiples tipos de archivo
-Modo dry-run (previsualización sin cambios)
-Interfaz CLI
-Interfaz gráfica (Tkinter)
-Manejo de errores robusto
-Preparado para automatización y scripting
+---
 
+## Descripción
 
-📦 Instalación
-git clone https://github.com/TU_USUARIO/task-automator-py.git
-cd task-automator-py
+NodoSurlatino es una herramienta desarrollada en Python para automatizar la organización de archivos por extensión, permitiendo mantener estructuras de trabajo limpias, eficientes y escalables.
+
+El proyecto está diseñado para ser ligero, portable y fácil de usar incluso en equipos con recursos limitados.
+
+---
+
+## Features
+
+✅ Organización automática de archivos por extensión  
+✅ Interfaz CLI usando argparse  
+✅ Modo simulación (`--dry-run`)  
+✅ Organización recursiva de carpetas  
+✅ Logging de actividad  
+✅ Configuración mediante JSON  
+✅ Soporte para múltiples extensiones  
+✅ Arquitectura modular  
+✅ Compatible con Windows 10  
+✅ Preparado para integración CI/CD
+
+---
+
+## Roadmap
+
+### Próximas mejoras
+
+- [ ] Interfaz gráfica (GUI)
+- [ ] Soporte para Linux
+- [ ] Configuración YAML
+- [ ] Integración con nube
+- [ ] Sistema de plugins
+- [ ] Organización inteligente mediante IA
+- [ ] Dashboard web
+- [ ] Procesamiento de archivos grandes
+
+---
+
+## Instalación
+
+```bash
+git clone https://github.com/TU-USUARIO/NodoSurlatino.git
+cd NodoSurlatino
+```
+
+Instalar dependencias:
+
+```bash
 pip install -r requirements.txt
-Requisitos:
+```
 
-Python 3.10+
+---
 
+## Uso
 
-🚀 Uso
-CLI
-python main.py --path ./mi_carpeta
-Dry run
-python main.py --path ./mi_carpeta --dry-run
-GUI
-python gui.py
+### Organizar carpeta
 
-🧪 Ejemplo
-Antes:
+```bash
+python main.py --path test_folder
+```
 
-foto.jpg  
-documento.pdf  
-notas.txt
+### Simulación sin mover archivos
 
-Después:
+```bash
+python main.py --path test_folder --dry-run
+```
 
-/jpg/foto.jpg  
-/pdf/documento.pdf  
-/txt/notas.txt
+### Organización recursiva
 
+```bash
+python main.py --path test_folder --recursive
+```
 
-📸 Demo
-<img src="docs/demo.png" alt="demo" />
+---
 
-🗺 Roadmap
+## Ejemplo de salida
 
- Configuración por archivo (JSON/YAML)
- Soporte recursivo
- Exportar logs
- Versión ejecutable (.exe)
- Reglas personalizadas por tipo
+```bash
+[INFO] Escaneando carpeta...
+[INFO] Moviendo archivo foto.jpg -> images/
+[INFO] Moviendo archivo documento.pdf -> documents/
+[INFO] Proceso finalizado
+```
 
+---
 
-🤝 Contributing
+## Screenshots
 
-Fork del repositorio  
-Crear rama (feature-nueva)  
-Commit claro  
-Pull Request
+### CLI funcionando
 
+![Demo](assets/demo.gif)
 
-📄 Licencia
-MIT
+---
+
+## Estructura del proyecto
+
+```bash
+NodoSurlatino/
+│
+├── task_automator/
+│   ├── core.py
+│
+├── test_folder/
+│
+├── .github/
+│   └── workflows/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+└── config.json
+```
+
+---
+
+## Contributing
+
+Las contribuciones son bienvenidas.
+
+Pasos:
+
+1. Fork del proyecto
+2. Crear branch
+3. Commit de cambios
+4. Push
+5. Crear Pull Request
+
+---
+
+## CI/CD
+
+El proyecto incluye GitHub Actions para validación automática básica.
+
+---
+
+## Licencia
+
+MIT License
+
+---
+
+## Autor
+
+Desarrollado por Noboa.
+``
